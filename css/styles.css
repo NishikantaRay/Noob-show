@@ -1,57 +1,92 @@
-body {
-  margin: 0;
-  padding: 0;
+body,html {
+	margin:0;
+	padding:0;
 }
 
-.page1 {
-  height: 100vh;
-  background-color: blue;
-  position: relative;
+/*
+  Effect
+*/
+#slides-holder {
+	position:relative;
+	width:100%;
 }
 
-.page2 {
-  height: 100vh;
-  background-color: red;
-  position: relative;
+.slide {
+	position:relative;
+	width:100%;
+	top:0;
+	left:0;
 }
 
-.page3 {
-  height: 100vh;
-  background-color: green;
-  position: relative;
+.slide.fixed {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
 }
 
-.scroll-downs {
-  position: absolute;
-  right: 0;
-  bottom: 25px;
-  left: 0;
-  margin: 0 auto;
-  
-  width :34px;
-  height: 55px;
+.slide-fake-height {
+	position:relative;
+	display:none;
 }
-.mousey {
-  width: 3px;
-  padding: 10px 15px;
-  height: 35px;
-  border: 2px solid #fff;
-  border-radius: 25px;
-  opacity: 0.75;
-  box-sizing: content-box;
+
+.slide-fake-height.visible {
+	display:block;
 }
-.scroller {
-  width: 3px;
-  height: 10px;
-  border-radius: 25%;
-  background-color: #fff;
-  animation-name: scroll;
-  animation-duration: 2.2s;
-  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
-  animation-iteration-count: infinite;
+
+/*
+  Demo styles
+*/
+.fade-text {
+	display:inline-block;
+	position:absolute;
+	font-family:HelveticaNeue,helvetica,arial;
+	font-size:60px;
+	opacity:.2;
+	-webkit-transition:all 500ms ease-out;
+	-moz-transition:all 500ms ease-out;
+	-o-transition:all 500ms ease-out;
+	transition:all 500ms ease-out;
 }
-@keyframes scroll {
-  0% { opacity: 0; }
-  10% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(15px); opacity: 0;}
+
+.fixed .fade-text {
+	opacity:1;
 }
+
+.slide {
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+	background-position:center center;
+	background-repeat:no-repeat;
+}
+
+	#slide-1 {
+		background-image:url(http://cloud.bassta.bg/fullscreenslides/slide1bg.jpg);
+	}
+	
+		#slide-1 .fade-text {
+			left:10%;
+			top:40%;
+		}
+	
+	#slide-2 {
+		background-image:url(http://cloud.bassta.bg/fullscreenslides/slide2bg.jpg);
+	}
+	
+		#slide-2 .fade-text {
+			left:5%;
+			top:40%;
+		}
+	
+	#slide-3 {
+		background-image:url(http://cloud.bassta.bg/fullscreenslides/slide3bg.jpg);
+	}
+	
+		#slide-3 .fade-text {
+		 color: white;
+			left:10%;
+			top:20%;
+		}
+	
